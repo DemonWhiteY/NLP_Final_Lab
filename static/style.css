@@ -1,0 +1,18 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* 自定义输入框样式 */
+#user-input {
+    border-radius: 5px;
+}
+
+/* 提交按钮样式 */
+#submit-btn {
+    border-radius: 5px;
+}
+
+/* 美化结果显示 */
+#result {
+    font-size: 1.2em;
+}

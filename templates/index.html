@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>美观 Web Demo</title>
+    <!-- 引入 Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        /* 设置 body 填充整个视口 */
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        /* 导航栏样式 */
+        .navbar {
+            margin-bottom: 20px;
+        }
+
+        /* 主要容器，设置为居中并给定一定的最大宽度 */
+        .main-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .input-container {
+            width: 60vw;
+            /* 占用 60% 的视口宽度 */
+            height: 70vh;
+            /* 占用 70% 的视口高度 */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* 输入框和显示框 */
+        .input-box,
+        .display-box {
+            flex: 1;
+            height: 100%;
+            /* 占满父容器的高度 */
+            margin-right: 10px;
+            font-size: 1.5rem;
+            padding: 20px;
+            overflow-y: auto;
+            /* 启用垂直滚动条 */
+        }
+
+        /* 输入框 */
+        .input-box {
+            border-radius: 4px;
+        }
+
+        /* 显示框 */
+        .display-box {
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 4px;
+        }
+
+        /* 下拉列表和按钮的容器 */
+        .controls-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        /* 下拉列表 */
+        .form-select {
+            width: 48%;
+        }
+
+        /* 按钮样式 */
+        .btn-submit {
+            width: 48%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Web Demo</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">首页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">关于</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">帮助</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主内容区域 -->
+    <div class="main-container">
+        <div class="input-container">
+
+            <form action="submit" method="post">
+                <div class="controls-container">
+                    <!-- 下拉列表 -->
+                    <select class="form-select" id="language-select" name="model">
+                        <option selected>{{model}}</option>
+                        <option value="T5">T5</option>
+                        <option value="T5C">T5-Chinese</option>
+                        <option value="seq2seq">seq2seq</option>
+                        <!-- 可以根据需要添加更多语言选项 -->
+                    </select>
+                    <!-- 提交按钮 -->
+                    <button type="submit" id="submit-btn" class="btn btn-primary btn-submit">提交</button>
+                </div>
+
+                <!-- 输入框 -->
+                <textarea id="user-input" name="input" class="form-control input-box" placeholder={{input}}
+                    aria-label="User input" rows="5"></textarea>
+                <!-- 显示框 -->
+                <div id="display-box" class="form-control display-box"> {{ result }}</div>
+            </form>
+
+        </div>
+    </div>
+
+    <!-- 引入 Bootstrap 脚本 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/script.js"></script>
+    <script>
+        // 获取输入框、显示框、下拉列表和提交按钮的 DOM 元素
+        const userInput = document.getElementById('user-input');
+        const displayBox = document.getElementById('display-box');
+        const submitBtn = document.getElementById('submit-btn');
+        const languageSelect = document.getElementById('language-select');
+
+
+
+        // 提交按钮点击事件
+        submitBtn.addEventListener('click', function () {
+            const selectedLanguage = languageSelect.value;
+            alert(`选择的语言是：${selectedLanguage}`);
+            // 在这里添加提交逻辑，根据选择的语言处理输入框内容
+        });
+    </script>
+</body>
+
+</html>
