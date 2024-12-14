@@ -1,0 +1,110 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* 自定义输入框样式 */
+#user-input {
+    border-radius: 5px;
+}
+
+/* 提交按钮样式 */
+#submit-btn {
+    border-radius: 5px;
+}
+
+/* 美化结果显示 */
+#result {
+    font-size: 1.2em;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* 导航栏样式 */
+.navbar {
+    margin-bottom: 20px;
+}
+
+/* 主要容器，设置为居中并给定一定的最大宽度 */
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.input-container {
+    width: 60vw;
+    /* 占用 60% 的视口宽度 */
+    height: 70vh;
+    /* 占用 70% 的视口高度 */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* 输入框和显示框 */
+.input-box,
+.display-box {
+    flex: 1;
+    height: 100%;
+    /* 占满父容器的高度 */
+    margin-right: 10px;
+    font-size: 1.5rem;
+    padding: 20px;
+    overflow-y: auto;
+    /* 启用垂直滚动条 */
+}
+
+/* 输入框 */
+.input-box {
+    border-radius: 4px;
+}
+
+/* 显示框 */
+.display-box {
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+}
+
+/* 下拉列表和按钮的容器 */
+.controls-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+/* 下拉列表 */
+.form-select {
+    width: 48%;
+}
+
+/* 按钮样式 */
+.btn-submit {
+    width: 48%;
+}

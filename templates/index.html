@@ -1,0 +1,175 @@
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>美观 Web Demo</title>
+    <!-- 引入 Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        /* 设置 body 填充整个视口 */
+    </style>
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Web Demo</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">首页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">关于</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">帮助</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主内容区域 -->
+    <div class="main-container">
+        <div class="input-container">
+
+            <form action="submit" method="post">
+                <div class="controls-container">
+                    <!-- 下拉列表 -->
+                    <select class="form-select" id="language-select" name="model">
+                        <option selected>{{model}}</option>
+                        <option value="seq2seq">seq2seq</option>
+                        <option value="BART">BART</option>
+                        <option value="BARTTUNED">BART-tuned</option>
+                        <!-- 可以根据需要添加更多语言选项 -->
+                    </select>
+                    <!-- 提交按钮 -->
+                    <button type="submit" id="submit-btn" class="btn btn-primary btn-submit">提交</button>
+                </div>
+
+                <!-- 输入框 -->
+                <textarea id="user-input" name="input" class="form-control input-box"
+                    placeholder=aria-label="User input" rows="5">{{input}}</textarea>
+                <!-- 显示框 -->
+                <div id="display-box" class="form-control display-box"> {{ result }}</div>
+            </form>
+
+        </div>
+    </div>
+
+    <!-- 引入 Bootstrap 脚本 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/script.js"></script>
+    <script>
+        // 获取输入框、显示框、下拉列表和提交按钮的 DOM 元素
+        const userInput = document.getElementById('user-input');
+        const displayBox = document.getElementById('display-box');
+        const submitBtn = document.getElementById('submit-btn');
+        const languageSelect = document.getElementById('language-select');
+
+
+
+        // 提交按钮点击事件
+        submitBtn.addEventListener('click', function () {
+            const selectedLanguage = languageSelect.value;
+            alert(`选择的语言是：${selectedLanguage}`);
+            // 在这里添加提交逻辑，根据选择的语言处理输入框内容
+        });
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
